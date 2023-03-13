@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Space | MakersBnB</title>
+        <link rel="stylesheet" type="text/css" href="<%= url('/style.css') %>" />
+    </head>
+    <body>
+        <h1>MakersBnB</h1>
+        <a href="/listings"> All Listings</a> | <a href="/add_listing"> Add Listing</a>
+        <h2>Advertise your space</h2>
+        <hr/>
+        <form action="/add_listing" method="POST">
+            <div>
+                <label> Property Name: </label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label> Description: </label>
+                <input id="textbox" type="textarea" name="description">
+            </div>
+            <div>
+                <label> Price per night: £ </label>
+                <input type="text" name="price_per_night">
+            </div>
+            <div>
+                <label> Available from: </label>
+                <input type="date" name="available_from">
+            </div>
+            <div>
+                <label> Available to: </label>
+                <input type="date" name="available_to">
+            </div>
+            <div>
+                <label> Host email: </label>
+                <input type="text" name="host_email">
+            </div>
+        <input id="submit" type="submit" value="Submit the form">
+    </body>
+</html>

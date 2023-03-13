@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= @name %> | MakersBnB</title>
+        <link rel="stylesheet" type="text/css" href="<%= url('/style.css') %>" />
+    </head>
+    <body>
+        <h1>MakersBnB</h1>
+        <a href="/listings"> All Listings</a> | <a href="/add_listing"> Add Listing</a>
+        <hr/>
+        <h2><%= @name %></h2>
+        <p><%= @description %></p>
+        <p>Price per night: £<%= @price_per_night %>0 </p>
+        <p>Available: <%= @available_from %> to <%= @available_to%> </p>
+        <p>To enquire, please email: <%= @host_email %> </p>
+    </body>
+</html>

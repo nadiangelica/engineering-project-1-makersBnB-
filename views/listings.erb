@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spaces | MakersBnB</title>
+        <link rel="stylesheet" type="text/css" href="<%= url('/style.css') %>" />
+    </head>
+    <body>
+        <h1>MakersBnB</h1>
+        <a href="/listings"> All Listings</a> | <a href="/add_listing"> Add Listing</a>
+        <h2>Book a Space</h2>
+        <form method="post" action="/listings">
+            Book from: <input type="date" id="start" name="trip_start" value="<%= @default_from_date %>">
+            Book to: <input type="date" id="end" name="trip_end" value="<%= @default_to_date %>">
+            <input type="submit" value="Submit">
+        </form>
+        <% if @filtered %>
+            <p><a href="/listings">Click here to go back to all listings</a></p>
+        <% end %>
+
+        <hr/>
+    
+        <% @spaces.each do |space| %>
+        <div>
+            <h3><a href="/listings/<%= space.id %>"> <%= space.name %></a></h3>
+            <p><%= space.description %></p>
+            <p>£<%= space.price_per_night %>0</p>
+            <hr style="width:50%">
+        </div>
+        <% end %>
+    </body>
+</html>
+
